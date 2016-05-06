@@ -1,2 +1,0 @@
-defmodule PhoenixMicrosoftbot do
-end

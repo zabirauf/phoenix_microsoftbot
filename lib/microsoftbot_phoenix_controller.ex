@@ -1,4 +1,20 @@
 defmodule MicrosoftBot.Phoenix.Controller do
+  @moduledoc """
+  This module defines the basic methods required to use the Microsoft bot service
+  ## Examples
+
+  Defining the controller
+  ```
+  defmodule MessageController do
+    use MicrosoftBot.Phoenix.Controller
+
+    def message_received(%MicrosoftBot.Models.Message{} = message) do
+    # ...
+    # send message back or resp(conn, 200, "")
+    end
+  end
+  ```
+  """
 
   defmacro __using__(_) do
     quote do
@@ -13,15 +29,15 @@ defmodule MicrosoftBot.Phoenix.Controller do
       def handle_message(conn, params) do
         resp =
           case Models.Message.parse(params) do
-            {:ok, message} -> @callback_handler.message_received(message)
+            {:ok, message} -> @callback_handler.message_received(conn, message)
             _ -> resp(conn, 400, "")
           end
 
-        respond.(resp)
+        respond(resp, conn)
       end
 
-      defp respond do
-        &responder.respond/1
+      defp respond(resp, conn) do
+        responder.respond(resp, conn)
       end
 
       defp responder do

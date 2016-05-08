@@ -1,6 +1,6 @@
 %{"dialyxir": {:hex, :dialyxir, "0.3.3"},
   "ex_doc": {:hex, :ex_doc, "0.11.5"},
-  "ex_microsoftbot": {:git, "https://github.com/zabirauf/ex_microsoftbot.git", "47b740302718f1db6a18d926469c0d26fb45ccfe", []},
+  "ex_microsoftbot": {:git, "https://github.com/zabirauf/ex_microsoftbot.git", "43fc9bb59b7520af53effabf7f55f54dc3622e00", []},
   "httpotion": {:hex, :httpotion, "2.2.2"},
   "ibrowse": {:hex, :ibrowse, "4.2.2"},
   "inch_ex": {:hex, :inch_ex, "0.5.1"},

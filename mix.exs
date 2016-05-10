@@ -47,7 +47,7 @@ defmodule PhoenixMicrosoftbot.Mixfile do
     [
       {:phoenix, "~> 1.1"},
       {:inch_ex, ">= 0.0.0", only: :docs},
-      {:ex_microsoftbot, github: "zabirauf/ex_microsoftbot"},
+      {:ex_microsoftbot, "~> 0.1.0"},
       {:dialyxir, "~> 0.3", only: [:dev]},
       {:ex_doc, "~> 0.11.5", only: [:dev]}
     ]

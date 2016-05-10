@@ -5,9 +5,26 @@ defmodule PhoenixMicrosoftbot.Mixfile do
     [app: :phoenix_microsoftbot,
      version: "0.1.0",
      elixir: "~> 1.2",
+     description: description,
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     package: package,
      deps: deps]
+  end
+
+  def description do
+    "This library allows for easy creation of the web API that the Microsoft bot framework can connect to."
+  end
+
+  defp package do
+    [
+      licenses: ["MIT License"],
+      maintainers: ["Zohaib Rauf"],
+      links: %{
+        "Github" => "https://github.com/zabirauf/phoenix_microsoftbot",
+        "Docs" => "https://hexdocs.pm/phoenix_microsoftbot/"
+      }
+    ]
   end
 
   # Configuration for the OTP application

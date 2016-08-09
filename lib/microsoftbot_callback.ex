@@ -1,10 +1,10 @@
 defmodule MicrosoftBot.Callback do
   @moduledoc """
-  The module defines the callback required to handle the messages receieved
+  The module defines the callback required to handle the activity receieved
   """
 
   @doc """
-  Callback to handle the messages received
+  Callback to handle the activity received
   """
-  @callback message_received(Plug.Conn.t, ExMicrosoftBot.Models.Message.t) :: Plug.Conn.t
+  @callback message_received(Plug.Conn.t, ExMicrosoftBot.Models.Activity.t) :: Plug.Conn.t
 end

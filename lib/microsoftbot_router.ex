@@ -61,18 +61,12 @@ defmodule MicrosoftBot.Router do
       end
 
       defp bot_authenticate(conn, _) do
-        case ExMicrosoftBot.Client.validate_bot_credentials(get_bot_auth_data, conn.req_headers) do
+        case ExMicrosoftBot.TokenValidation.validate_bot_credentials?(conn.req_headers) do
           true -> conn
           false -> resp(conn, 403, "") |> halt
         end
       end
 
-      defp get_bot_auth_data() do
-        %ExMicrosoftBot.Models.AuthData{
-          app_id: Application.get_env(:microsoftbot, :app_id),
-          app_secret: Application.get_env(:microsoftbot, :app_secret)
-        }
-      end
     end
   end
 end

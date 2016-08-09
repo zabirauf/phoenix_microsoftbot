@@ -6,5 +6,5 @@ defmodule MicrosoftBot.Callback do
   @doc """
   Callback to handle the messages received
   """
-  @callback message_received(Plug.Conn.t, ExMicrosoftBot.Models.Message.t) :: ExMicrosoftBot.Models.Message.t | Plug.Conn.t
+  @callback message_received(Plug.Conn.t, ExMicrosoftBot.Models.Message.t) :: Plug.Conn.t
 end

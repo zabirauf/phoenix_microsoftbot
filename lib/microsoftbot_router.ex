@@ -49,7 +49,6 @@ defmodule MicrosoftBot.Router do
   @spec microsoftbot_routes(String.t, module) :: any
   defmacro microsoftbot_routes(path, controller) do
     quote do
-      require Logger
 
       pipeline :microsoftbot do
         plug :accepts, ["json"]
@@ -62,18 +61,12 @@ defmodule MicrosoftBot.Router do
       end
 
       defp bot_authenticate(conn, _) do
-        Logger.debug "MicrosoftBot.Router.bot_authenticate/2: Headers of request #{inspect(conn.req_headers)}"
 
         case ExMicrosoftBot.TokenValidation.validate_bot_credentials?(conn.req_headers) do
           true ->
-            Logger.debug "MicrosoftBot.Router.bot_authenticate/2: Validation passed"
             conn
           false ->
-            Logger.debug "MicrosoftBot.Router.bot_authenticate/2: Failed validation"
             resp(conn, 403, "") |> halt
-          any_val ->
-            Logger.debug "MicrosoftBot.Router.bot_authenticate/2: Failed pattern matching #{inspect(any_val)}"
-            resp(conn, 500, "Invalid pattern matching") |> halt
         end
       end
 

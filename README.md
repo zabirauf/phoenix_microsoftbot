@@ -1,4 +1,4 @@
-[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/zabirauf/phoenix_microsoftbot/master/LICENSE.md) [![Build Status](https://travis-ci.org/zabirauf/phoenix_microsoftbot.svg?branch=master)](https://travis-ci.org/zabirauf/phoenix_microsoftbot) [![Inline docs](http://inch-ci.org/github/zabirauf/phoenix_microsoftbot.svg)](http://inch-ci.org/github/zabirauf/phoenix_microsoftbot) <a href="http://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="Made with Spacemacs"></a>
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/zabirauf/phoenix_microsoftbot/master/LICENSE.md) [![hex.pm version](https://img.shields.io/hexpm/v/phoenix_microsoftbot.svg?style=flat)](https://hex.pm/packages/phoenix_microsoftbot) [![Build Status](https://travis-ci.org/zabirauf/phoenix_microsoftbot.svg?branch=master)](https://travis-ci.org/zabirauf/phoenix_microsoftbot) [![Inline docs](http://inch-ci.org/github/zabirauf/phoenix_microsoftbot.svg)](http://inch-ci.org/github/zabirauf/phoenix_microsoftbot) <a href="http://github.com/syl20bnr/spacemacs"><img src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" alt="Made with Spacemacs"></a>
 
 # Phoenix Microsoft Bot
 
@@ -13,9 +13,9 @@ API documentation is available at [https://hexdocs.pm/phoenix_microsoftbot](http
   1. Add ex_microsoftbot to your list of dependencies in `mix.exs`:
 
         def deps do
-          [{:phoenix_microsoftbot, "~> 0.1.0"}]
+          [{:phoenix_microsoftbot, "~> 1.0.0"}]
         end
-        
+
 ## Usage
 To create the Web API for Microsoft Bot Framework to connect to requires three steps
 
@@ -46,5 +46,5 @@ end
 ```
 config :microsoftbot,
   app_id: "APP_ID",
-  app_secret: "APP_SECRET" 
+  app_secret: "APP_SECRET"
 ```

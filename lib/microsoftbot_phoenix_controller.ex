@@ -8,7 +8,7 @@ defmodule MicrosoftBot.Phoenix.Controller do
   defmodule MessageController do
     use MicrosoftBot.Phoenix.Controller
 
-    def message_received(%MicrosoftBot.Models.Message{} = message) do
+    def message_received(%MicrosoftBot.Models.Activity{} = activity) do
     # ...
     # send message back or resp(conn, 200, "")
     end
@@ -28,7 +28,7 @@ defmodule MicrosoftBot.Phoenix.Controller do
 
       def handle_message(conn, params) do
         resp =
-          case Models.Message.parse(params) do
+          case Models.Activity.parse(params) do
             {:ok, message} -> @callback_handler.message_received(conn, message)
             _ -> resp(conn, 400, "")
           end
@@ -41,7 +41,7 @@ defmodule MicrosoftBot.Phoenix.Controller do
       end
 
       defp responder do
-        Application.get_env(:microsoftbot, :responder) || MicrosoftBot.Responder
+        Application.get_env(:phoenix_microsoftbot, :responder) || MicrosoftBot.Responder
       end
     end
   end

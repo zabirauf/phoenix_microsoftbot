@@ -3,8 +3,8 @@ defmodule PhoenixMicrosoftbot.Mixfile do
 
   def project do
     [app: :phoenix_microsoftbot,
-     version: "0.1.0",
-     elixir: "~> 1.2",
+     version: "1.0.0",
+     elixir: "~> 1.3",
      description: description,
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -45,11 +45,11 @@ defmodule PhoenixMicrosoftbot.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:phoenix, "~> 1.1"},
-      {:inch_ex, ">= 0.0.0", only: :docs},
-      {:ex_microsoftbot, github: "zabirauf/ex_microsoftbot", branch: "botV3"},
-      {:dialyxir, "~> 0.3", only: [:dev]},
-      {:ex_doc, "~> 0.11.5", only: [:dev]}
+      {:phoenix, "~> 1.2.1"},
+      {:inch_ex, "~> 0.5", only: :docs},
+      {:ex_microsoftbot, "~> 1.0"},
+      {:dialyxir, "~> 0.4", only: [:dev]},
+      {:ex_doc, "~> 0.14", only: [:dev]}
     ]
   end
 end
